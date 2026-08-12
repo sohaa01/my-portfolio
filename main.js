@@ -21,7 +21,8 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
-
+console.log("SKILL BAR JS RUNNING");
+  
   // Animate skill bars into view
   const bars = document.querySelectorAll(".bar-fill");
   if (bars.length) {
