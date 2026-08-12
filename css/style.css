@@ -1,42 +1,48 @@
 /* ============================================
 
-   Soha — Portfolio
+   SOHA — PORTFOLIO
 
-   Refined responsive portfolio design
+   Modern • Creative • Responsive
 
    ============================================ */
 
 :root {
 
-  --paper: #FAFAF7;
+  --paper: #F7F5EF;
 
   --surface: #FFFFFF;
 
-  --ink: #1B1D1F;
+  --surface-soft: #F0F3ED;
 
-  --muted: #6B6F76;
+  --ink: #18211E;
 
-  --line: #E4E2DC;
+  --muted: #68736E;
 
-  --teal: #2F5D50;
+  --line: #DDE2DC;
 
-  --teal-dark: #203F37;
+  --teal: #2F6658;
 
-  --brass: #C9A26D;
+  --teal-dark: #21483E;
+
+  --teal-light: #DCEBE4;
+
+  --brass: #C59A5A;
+
+  --brass-light: #F0E2C8;
 
   --font-display: "Fraunces", Georgia, serif;
 
   --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
 
-  --font-mono: "IBM Plex Mono", "SFMono-Regular", Consolas, monospace;
+  --font-mono: "IBM Plex Mono", monospace;
 
   --max-width: 1120px;
 
-  --radius: 12px;
+  --radius: 14px;
 
-  --shadow-soft: 0 12px 40px rgba(27, 29, 31, 0.06);
+  --shadow-soft: 0 12px 35px rgba(27, 45, 39, 0.07);
 
-  --shadow-hover: 0 22px 55px rgba(27, 29, 31, 0.12);
+  --shadow-hover: 0 22px 55px rgba(27, 45, 39, 0.13);
 
 }
 
@@ -52,37 +58,31 @@ html {
 
 }
 
-@media (prefers-reduced-motion: reduce) {
-
-  html {
-
-    scroll-behavior: auto;
-
-  }
-
-  *,
-
-  *::before,
-
-  *::after {
-
-    animation-duration: 0.001ms !important;
-
-    transition-duration: 0.001ms !important;
-
-  }
-
-}
-
 body {
 
   margin: 0;
 
   background:
 
-    radial-gradient(circle at 90% 8%, rgba(201, 162, 109, 0.09), transparent 25rem),
+    radial-gradient(
 
-    radial-gradient(circle at 5% 35%, rgba(47, 93, 80, 0.05), transparent 28rem),
+      circle at 85% 8%,
+
+      rgba(197, 154, 90, 0.15),
+
+      transparent 280px
+
+    ),
+
+    radial-gradient(
+
+      circle at 5% 35%,
+
+      rgba(47, 102, 88, 0.08),
+
+      transparent 320px
+
+    ),
 
     var(--paper);
 
@@ -124,6 +124,12 @@ img {
 
 }
 
+/* ============================================
+
+   Typography
+
+   ============================================ */
+
 .eyebrow {
 
   display: inline-flex;
@@ -136,7 +142,7 @@ img {
 
   font-size: 11px;
 
-  letter-spacing: 0.14em;
+  letter-spacing: 0.15em;
 
   text-transform: uppercase;
 
@@ -150,9 +156,11 @@ img {
 
   content: "";
 
-  width: 28px;
+  width: 30px;
 
-  height: 1px;
+  height: 2px;
+
+  border-radius: 999px;
 
   background: var(--brass);
 
@@ -185,8 +193,6 @@ h1 {
 h2 {
 
   font-size: clamp(1.9rem, 3.5vw, 2.8rem);
-
-  letter-spacing: -0.025em;
 
 }
 
@@ -222,17 +228,19 @@ p {
 
   z-index: 100;
 
-  background: rgba(250, 250, 247, 0.82);
+  background: rgba(247, 245, 239, 0.84);
 
   backdrop-filter: blur(18px);
 
   -webkit-backdrop-filter: blur(18px);
 
-  border-bottom: 1px solid rgba(228, 226, 220, 0.8);
+  border-bottom: 1px solid rgba(221, 226, 220, 0.8);
 
 }
 
 .site-nav .wrap {
+
+  min-height: 72px;
 
   display: flex;
 
@@ -240,19 +248,15 @@ p {
 
   justify-content: space-between;
 
-  min-height: 72px;
-
 }
 
 .brand {
 
   font-family: var(--font-display);
 
+  font-size: 1.3rem;
+
   font-weight: 600;
-
-  font-size: 1.25rem;
-
-  letter-spacing: -0.02em;
 
 }
 
@@ -266,7 +270,7 @@ p {
 
   display: flex;
 
-  gap: 34px;
+  gap: 32px;
 
   list-style: none;
 
@@ -278,13 +282,13 @@ p {
 
 .nav-links a {
 
+  position: relative;
+
   font-size: 13px;
 
   font-weight: 600;
 
   color: var(--muted);
-
-  position: relative;
 
   padding: 7px 0;
 
@@ -318,7 +322,7 @@ p {
 
 .nav-links a[aria-current="page"] {
 
-  color: var(--ink);
+  color: var(--teal);
 
 }
 
@@ -330,6 +334,8 @@ p {
 
 }
 
+/* Hamburger */
+
 .hamburger {
 
   display: none;
@@ -338,15 +344,15 @@ p {
 
   gap: 5px;
 
-  background: none;
+  padding: 9px;
+
+  background: var(--surface);
 
   border: 1px solid var(--line);
 
   border-radius: 9px;
 
   cursor: pointer;
-
-  padding: 9px;
 
 }
 
@@ -356,11 +362,11 @@ p {
 
   height: 2px;
 
-  border-radius: 999px;
-
   background: var(--ink);
 
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  border-radius: 999px;
+
+  transition: 0.2s ease;
 
 }
 
@@ -396,41 +402,37 @@ p {
 
   justify-content: center;
 
-  gap: 9px;
-
   min-height: 48px;
 
-  padding: 12px 21px;
+  padding: 12px 22px;
 
-  border-radius: 9px;
+  border-radius: 10px;
 
   font-size: 13px;
 
   font-weight: 700;
 
-  border: 1px solid transparent;
-
-  cursor: pointer;
-
   transition:
 
     transform 0.2s ease,
 
+    box-shadow 0.2s ease,
+
     background 0.2s ease,
 
-    border-color 0.2s ease,
-
-    box-shadow 0.2s ease;
+    border-color 0.2s ease;
 
 }
 
 .btn-primary {
 
+  color: white;
+
   background: var(--teal);
 
-  color: var(--paper);
+  box-shadow:
 
-  box-shadow: 0 9px 22px rgba(47, 93, 80, 0.18);
+    0 10px 24px rgba(47, 102, 88, 0.2);
 
 }
 
@@ -440,27 +442,27 @@ p {
 
   transform: translateY(-3px);
 
-  box-shadow: 0 14px 28px rgba(47, 93, 80, 0.24);
+  box-shadow:
+
+    0 16px 30px rgba(47, 102, 88, 0.25);
 
 }
 
 .btn-ghost {
 
-  background: rgba(255, 255, 255, 0.65);
+  color: var(--teal);
 
-  color: var(--ink);
+  background: rgba(255, 255, 255, 0.7);
 
-  border-color: var(--line);
+  border: 1px solid var(--line);
 
 }
 
 .btn-ghost:hover {
 
+  background: var(--teal-light);
+
   border-color: var(--teal);
-
-  color: var(--teal);
-
-  background: var(--surface);
 
   transform: translateY(-3px);
 
@@ -468,7 +470,7 @@ p {
 
 /* ============================================
 
-   Hero
+   HERO
 
    ============================================ */
 
@@ -490,25 +492,25 @@ p {
 
 }
 
+/* Decorative circles */
+
 .hero::before {
 
   content: "";
 
   position: absolute;
 
-  width: 110px;
+  width: 130px;
 
-  height: 110px;
+  height: 130px;
 
-  border: 1px solid rgba(201, 162, 109, 0.5);
+  border: 1px solid rgba(197, 154, 90, 0.45);
 
   border-radius: 50%;
 
-  top: 70px;
+  top: 65px;
 
-  left: -65px;
-
-  pointer-events: none;
+  left: -75px;
 
 }
 
@@ -518,31 +520,75 @@ p {
 
   position: absolute;
 
-  width: 7px;
+  width: 9px;
 
-  height: 7px;
+  height: 9px;
 
   background: var(--brass);
 
   border-radius: 50%;
 
-  right: 42%;
+  right: 43%;
 
-  top: 24%;
+  top: 23%;
 
   box-shadow:
 
-    22px 18px 0 rgba(47, 93, 80, 0.25),
+    25px 18px 0 rgba(47, 102, 88, 0.25),
 
-    -16px 31px 0 rgba(201, 162, 109, 0.3);
+    -18px 35px 0 rgba(197, 154, 90, 0.3);
 
 }
+
+/* Hero text */
 
 .hero > div:first-child {
 
   animation: heroText 0.8s ease both;
 
 }
+
+.hero h1 {
+
+  max-width: 750px;
+
+}
+
+.hero h1::after {
+
+  content: ".";
+
+  color: var(--brass);
+
+}
+
+.hero .tagline {
+
+  max-width: 54ch;
+
+  margin: 20px 0 30px;
+
+  font-size: clamp(1rem, 1.8vw, 1.18rem);
+
+  color: var(--muted);
+
+}
+
+.cta-row {
+
+  display: flex;
+
+  gap: 12px;
+
+  flex-wrap: wrap;
+
+}
+
+/* ============================================
+
+   HERO PHOTO
+
+   ============================================ */
 
 .hero-photo {
 
@@ -554,59 +600,19 @@ p {
 
   justify-self: end;
 
-  border-radius: 22px;
+  padding: 10px;
 
   background: var(--surface);
 
   border: 1px solid var(--line);
 
-  padding: 10px;
+  border-radius: 22px;
 
   box-shadow: var(--shadow-soft);
 
   transform: rotate(2deg);
 
   animation: heroPhoto 0.9s ease 0.1s both;
-
-}
-
-.hero-photo::before {
-
-  content: "";
-
-  position: absolute;
-
-  width: 72px;
-
-  height: 72px;
-
-  border: 2px solid var(--brass);
-
-  border-radius: 50%;
-
-  left: -38px;
-
-  bottom: 35px;
-
-  z-index: -1;
-
-}
-
-.hero-photo::after {
-
-  content: "";
-
-  position: absolute;
-
-  inset: 18px -14px -14px 18px;
-
-  border: 1px solid var(--teal);
-
-  border-radius: 22px;
-
-  opacity: 0.25;
-
-  z-index: -1;
 
 }
 
@@ -622,49 +628,55 @@ p {
 
 }
 
-.hero h1 {
+.hero-photo::before {
 
-  margin-top: 5px;
+  content: "";
 
-  max-width: 720px;
+  position: absolute;
 
-}
+  width: 78px;
 
-.hero h1::after {
+  height: 78px;
 
-  content: ".";
+  left: -40px;
 
-  color: var(--brass);
+  bottom: 35px;
 
-}
+  border: 3px solid var(--brass);
 
-.hero .tagline {
+  border-radius: 50%;
 
-  font-size: clamp(1rem, 1.8vw, 1.18rem);
-
-  color: var(--muted);
-
-  max-width: 53ch;
-
-  margin: 20px 0 30px;
+  z-index: -1;
 
 }
 
-.cta-row {
+.hero-photo::after {
 
-  display: flex;
+  content: "";
 
-  gap: 12px;
+  position: absolute;
 
-  flex-wrap: wrap;
+  inset: 18px -14px -14px 18px;
+
+  border: 2px solid var(--teal);
+
+  border-radius: 22px;
+
+  opacity: 0.25;
+
+  z-index: -1;
 
 }
+
+/* ============================================
+
+   SOCIAL LINKS
+
+   ============================================ */
 
 .social-row {
 
   display: flex;
-
-  align-items: center;
 
   flex-wrap: wrap;
 
@@ -676,13 +688,13 @@ p {
 
 .social-row a {
 
+  position: relative;
+
   font-family: var(--font-mono);
 
   font-size: 12px;
 
   color: var(--muted);
-
-  position: relative;
 
   transition: color 0.2s ease;
 
@@ -722,7 +734,7 @@ p {
 
 /* ============================================
 
-   Sections
+   SECTIONS
 
    ============================================ */
 
@@ -758,13 +770,11 @@ section + section {
 
   font-size: 1rem;
 
-  max-width: 62ch;
-
 }
 
 /* ============================================
 
-   About
+   ABOUT
 
    ============================================ */
 
@@ -798,19 +808,21 @@ section + section {
 
   padding: 18px;
 
-  border: 1px solid transparent;
-
   border-radius: 12px;
 
-  transition: background 0.2s ease, border-color 0.2s ease;
+  transition:
+
+    background 0.2s ease,
+
+    transform 0.2s ease;
 
 }
 
 .timeline-item:hover {
 
-  background: rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.7);
 
-  border-color: var(--line);
+  transform: translateX(4px);
 
 }
 
@@ -828,11 +840,11 @@ section + section {
 
   height: 9px;
 
-  border-radius: 50%;
-
   background: var(--teal);
 
   border: 3px solid var(--paper);
+
+  border-radius: 50%;
 
   box-shadow: 0 0 0 1px var(--teal);
 
@@ -844,7 +856,7 @@ section + section {
 
   font-size: 11px;
 
-  color: var(--muted);
+  color: var(--brass);
 
   letter-spacing: 0.04em;
 
@@ -870,13 +882,13 @@ section + section {
 
   padding: 7px 12px;
 
-  border: 1px solid var(--line);
+  color: var(--teal);
+
+  background: var(--teal-light);
+
+  border: 1px solid rgba(47, 102, 88, 0.15);
 
   border-radius: 999px;
-
-  color: var(--muted);
-
-  background: rgba(255, 255, 255, 0.55);
 
   transition: 0.2s ease;
 
@@ -884,9 +896,9 @@ section + section {
 
 .interest-tags span:hover {
 
-  color: var(--teal);
+  background: var(--brass-light);
 
-  border-color: var(--teal);
+  color: var(--teal-dark);
 
   transform: translateY(-2px);
 
@@ -894,7 +906,7 @@ section + section {
 
 /* ============================================
 
-   Skills
+   SKILLS
 
    ============================================ */
 
@@ -910,15 +922,15 @@ section + section {
 
 .skills-grid > div {
 
-  padding: 26px;
+  padding: 28px;
 
-  background: rgba(255, 255, 255, 0.62);
+  background: rgba(255, 255, 255, 0.75);
 
   border: 1px solid var(--line);
 
-  border-radius: 14px;
+  border-radius: 16px;
 
-  box-shadow: 0 8px 30px rgba(27, 29, 31, 0.035);
+  box-shadow: var(--shadow-soft);
 
 }
 
@@ -966,7 +978,7 @@ section + section {
 
 .bar {
 
-  height: 7px;
+  height: 8px;
 
   background: var(--line);
 
@@ -978,13 +990,23 @@ section + section {
 
 .bar-fill {
 
+  width: 0;
+
   height: 100%;
 
-  background: linear-gradient(90deg, var(--teal), #47786a);
+  background:
+
+    linear-gradient(
+
+      90deg,
+
+      var(--teal),
+
+      #57917F
+
+    );
 
   border-radius: 999px;
-
-  width: 0;
 
   transition: width 1s ease;
 
@@ -1010,11 +1032,13 @@ section + section {
 
   padding: 9px 13px;
 
+  color: var(--teal);
+
   background: var(--surface);
 
   border: 1px solid var(--line);
 
-  border-radius: 8px;
+  border-radius: 9px;
 
   transition: 0.2s ease;
 
@@ -1022,19 +1046,19 @@ section + section {
 
 .tool-list span:hover {
 
-  color: var(--teal);
+  color: var(--teal-dark);
 
-  border-color: var(--teal);
+  border-color: var(--brass);
+
+  background: var(--brass-light);
 
   transform: translateY(-2px);
-
-  box-shadow: var(--shadow-soft);
 
 }
 
 /* ============================================
 
-   Projects
+   PROJECTS
 
    ============================================ */
 
@@ -1042,7 +1066,9 @@ section + section {
 
   display: grid;
 
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns:
+
+    repeat(auto-fit, minmax(280px, 1fr));
 
   gap: 26px;
 
@@ -1052,7 +1078,7 @@ section + section {
 
   position: relative;
 
-  background: rgba(255, 255, 255, 0.78);
+  background: rgba(255, 255, 255, 0.82);
 
   border: 1px solid var(--line);
 
@@ -1060,7 +1086,7 @@ section + section {
 
   overflow: hidden;
 
-  box-shadow: 0 8px 30px rgba(27, 29, 31, 0.035);
+  box-shadow: var(--shadow-soft);
 
   transition:
 
@@ -1078,7 +1104,7 @@ section + section {
 
   box-shadow: var(--shadow-hover);
 
-  border-color: rgba(47, 93, 80, 0.45);
+  border-color: rgba(47, 102, 88, 0.45);
 
 }
 
@@ -1088,31 +1114,19 @@ section + section {
 
   aspect-ratio: 16 / 10;
 
-  background: linear-gradient(135deg, #EDEAE1, #E4E2DC);
+  background:
+
+    linear-gradient(
+
+      135deg,
+
+      var(--brass-light),
+
+      var(--teal-light)
+
+    );
 
   overflow: hidden;
-
-}
-
-.project-thumb::after {
-
-  content: "";
-
-  position: absolute;
-
-  inset: 0;
-
-  background: linear-gradient(
-
-    135deg,
-
-    transparent 50%,
-
-    rgba(255, 255, 255, 0.15)
-
-  );
-
-  pointer-events: none;
 
 }
 
@@ -1130,7 +1144,7 @@ section + section {
 
 .project-card:hover .project-thumb img {
 
-  transform: scale(1.045);
+  transform: scale(1.05);
 
 }
 
@@ -1176,13 +1190,13 @@ section + section {
 
   padding: 5px 9px;
 
-  background: var(--paper);
+  color: var(--teal);
 
-  border: 1px solid var(--line);
+  background: var(--teal-light);
+
+  border: 1px solid rgba(47, 102, 88, 0.15);
 
   border-radius: 999px;
-
-  color: var(--muted);
 
 }
 
@@ -1202,15 +1216,11 @@ section + section {
 
   color: var(--teal);
 
-  position: relative;
-
 }
 
 .project-links a::after {
 
-  content: "↗";
-
-  margin-left: 5px;
+  content: " ↗";
 
   color: var(--brass);
 
@@ -1224,7 +1234,7 @@ section + section {
 
 /* ============================================
 
-   Contact
+   CONTACT
 
    ============================================ */
 
@@ -1268,7 +1278,7 @@ section + section {
 
   border-radius: 10px;
 
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.85);
 
   font-family: var(--font-body);
 
@@ -1292,7 +1302,9 @@ section + section {
 
   border-color: var(--teal);
 
-  box-shadow: 0 0 0 4px rgba(47, 93, 80, 0.08);
+  box-shadow:
+
+    0 0 0 4px rgba(47, 102, 88, 0.08);
 
 }
 
@@ -1334,13 +1346,13 @@ section + section {
 
 .form-status {
 
+  display: none;
+
   margin-top: 16px;
 
   font-size: 13px;
 
   font-family: var(--font-mono);
-
-  display: none;
 
 }
 
@@ -1360,11 +1372,23 @@ section + section {
 
   padding: 28px;
 
-  border: 1px solid var(--line);
+  background:
 
-  border-radius: 14px;
+    linear-gradient(
 
-  background: rgba(255, 255, 255, 0.6);
+      145deg,
+
+      var(--teal-light),
+
+      rgba(255,255,255,0.8)
+
+    );
+
+  border: 1px solid rgba(47, 102, 88, 0.15);
+
+  border-radius: 16px;
+
+  box-shadow: var(--shadow-soft);
 
 }
 
@@ -1396,17 +1420,19 @@ section + section {
 
   font-size: 15px;
 
+  color: var(--teal-dark);
+
 }
 
 .contact-info .row a:hover {
 
-  color: var(--teal);
+  color: var(--brass);
 
 }
 
 /* ============================================
 
-   Footer
+   FOOTER
 
    ============================================ */
 
@@ -1416,7 +1442,17 @@ footer {
 
   padding: 34px 0;
 
-  background: rgba(255, 255, 255, 0.3);
+  background:
+
+    linear-gradient(
+
+      180deg,
+
+      rgba(220, 235, 228, 0.25),
+
+      transparent
+
+    );
 
 }
 
@@ -1452,7 +1488,7 @@ footer .social-row {
 
 /* ============================================
 
-   Page Headers
+   PAGE HEADER
 
    ============================================ */
 
@@ -1466,13 +1502,11 @@ footer .social-row {
 
   font-size: clamp(2.3rem, 5vw, 3.4rem);
 
-  max-width: 750px;
-
 }
 
 /* ============================================
 
-   Animations
+   ANIMATIONS
 
    ============================================ */
 
@@ -1502,7 +1536,7 @@ footer .social-row {
 
     opacity: 0;
 
-    transform: translateY(20px) rotate(5deg);
+    transform: translateY(20px) rotate(6deg);
 
   }
 
@@ -1518,7 +1552,7 @@ footer .social-row {
 
 /* ============================================
 
-   Responsive — Tablet
+   TABLET
 
    ============================================ */
 
@@ -1548,7 +1582,7 @@ footer .social-row {
 
 /* ============================================
 
-   Responsive — Mobile
+   MOBILE
 
    ============================================ */
 
@@ -1579,8 +1613,6 @@ footer .social-row {
     background: rgba(255, 255, 255, 0.97);
 
     backdrop-filter: blur(15px);
-
-    -webkit-backdrop-filter: blur(15px);
 
     flex-direction: column;
 
@@ -1614,8 +1646,6 @@ footer .social-row {
 
     padding: 15px 22px;
 
-    font-size: 13px;
-
   }
 
   .nav-links a::after {
@@ -1642,26 +1672,6 @@ footer .social-row {
 
   }
 
-  .hero::before {
-
-    width: 75px;
-
-    height: 75px;
-
-    left: -48px;
-
-    top: 40px;
-
-  }
-
-  .hero::after {
-
-    right: 12%;
-
-    top: 44%;
-
-  }
-
   .hero h1 {
 
     font-size: clamp(2.6rem, 13vw, 4rem);
@@ -1682,25 +1692,9 @@ footer .social-row {
 
   }
 
-  .hero-photo::before {
-
-    width: 55px;
-
-    height: 55px;
-
-    left: -27px;
-
-  }
-
   section {
 
     padding: 72px 0;
-
-  }
-
-  .section-head {
-
-    margin-bottom: 34px;
 
   }
 
@@ -1720,29 +1714,11 @@ footer .social-row {
 
   }
 
-  .skills-grid > div {
-
-    padding: 22px;
-
-  }
-
   .project-grid {
 
     grid-template-columns: 1fr;
 
     gap: 20px;
-
-  }
-
-  .project-body {
-
-    padding: 20px;
-
-  }
-
-  .contact-info {
-
-    padding: 22px;
 
   }
 
@@ -1758,7 +1734,7 @@ footer .social-row {
 
 /* ============================================
 
-   Responsive — Small Phones
+   SMALL PHONES
 
    ============================================ */
 
