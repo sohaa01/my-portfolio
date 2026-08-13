@@ -3,89 +3,363 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
 <title>Skills — Soha</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="css/style.css" />
 </head>
+
 <body>
 
+<!-- ================= NAVIGATION ================= -->
+
 <nav class="site-nav">
-  <div class="wrap">
-    <a href="index.html" class="brand">Soha Sawant<span>.</span></a>
+
+  <div class="wrap nav-inner">
+
+    <a href="index.html" class="brand">
+      SOHA<span>.</span>
+    </a>
+
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="skills.html" aria-current="page">Skills</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="contact.html">Contact</a></li>
+
+      <li>
+        <a href="index.html">Home</a>
+      </li>
+
+      <li>
+        <a href="about.html">About</a>
+      </li>
+
+      <li>
+        <a href="skills.html" aria-current="page">Skills</a>
+      </li>
+
+      <li>
+        <a href="projects.html">Projects</a>
+      </li>
+
+      <li>
+        <a href="contact.html">Contact</a>
+      </li>
+
     </ul>
-    <button class="hamburger" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
+
+    <button
+      class="hamburger"
+      aria-label="Toggle menu"
+      type="button"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
+
   </div>
+
 </nav>
 
+
+<!-- ================= PAGE HEADER ================= -->
+
 <header class="page-header wrap">
-  <p class="eyebrow">Skills</p>
-  <h1>What I work with</h1>
+
+  <p class="eyebrow">Skills & Expertise</p>
+
+  <h1>
+    What I
+    <span>work with.</span>
+  </h1>
+
+  <p class="skills-intro">
+    A growing set of technical skills I use to design,
+    develop and deploy responsive web experiences.
+  </p>
+
 </header>
 
-<section class="wrap">
-  <div class="skills-grid">
-    <div>
-      <div class="skill-row">
-        <div class="label-row"><span>HTML</span><span>90%</span></div>
-        <div class="bar"><div class="bar-fill" data-level="90"></div></div>
+
+<!-- ================= SKILLS ================= -->
+
+<section class="skills-section">
+
+  <div class="wrap">
+
+    <div class="skills-grid">
+
+
+      <!-- FRONT END -->
+
+      <div class="skills-card">
+
+        <div class="skills-card-head">
+
+          <span class="skill-number">01</span>
+
+          <div>
+            <p class="skill-category">FRONT-END</p>
+            <h2>Web Development</h2>
+          </div>
+
+        </div>
+
+
+        <div class="skill-row">
+
+          <div class="label-row">
+            <span>HTML</span>
+            <span>90%</span>
+          </div>
+
+          <div class="bar">
+            <div
+              class="bar-fill"
+              data-level="90"
+            ></div>
+          </div>
+
+        </div>
+
+
+        <div class="skill-row">
+
+          <div class="label-row">
+            <span>CSS</span>
+            <span>85%</span>
+          </div>
+
+          <div class="bar">
+            <div
+              class="bar-fill"
+              data-level="85"
+            ></div>
+          </div>
+
+        </div>
+
+
+        <div class="skill-row">
+
+          <div class="label-row">
+            <span>JavaScript</span>
+            <span>70%</span>
+          </div>
+
+          <div class="bar">
+            <div
+              class="bar-fill"
+              data-level="70"
+            ></div>
+          </div>
+
+        </div>
+
       </div>
-      <div class="skill-row">
-        <div class="label-row"><span>CSS</span><span>85%</span></div>
-        <div class="bar"><div class="bar-fill" data-level="85"></div></div>
+
+
+      <!-- OTHER SKILLS -->
+
+      <div class="skills-card">
+
+        <div class="skills-card-head">
+
+          <span class="skill-number">02</span>
+
+          <div>
+            <p class="skill-category">TECHNICAL</p>
+            <h2>Other Skills</h2>
+          </div>
+
+        </div>
+
+
+        <div class="skill-row">
+
+          <div class="label-row">
+            <span>Database Management</span>
+            <span>80%</span>
+          </div>
+
+          <div class="bar">
+            <div
+              class="bar-fill"
+              data-level="80"
+            ></div>
+          </div>
+
+        </div>
+
+
+        <div class="skill-row">
+
+          <div class="label-row">
+            <span>Web Deployment</span>
+            <span>65%</span>
+          </div>
+
+          <div class="bar">
+            <div
+              class="bar-fill"
+              data-level="65"
+            ></div>
+          </div>
+
+        </div>
+
+
+        <div class="skill-row">
+
+          <div class="label-row">
+            <span>UI/UX Design</span>
+            <span>60%</span>
+          </div>
+
+          <div class="bar">
+            <div
+              class="bar-fill"
+              data-level="60"
+            ></div>
+          </div>
+
+        </div>
+
       </div>
-      <div class="skill-row">
-        <div class="label-row"><span>JavaScript</span><span>70%</span></div>
-        <div class="bar"><div class="bar-fill" data-level="70"></div></div>
-      </div>
+
     </div>
-    <div>
-      <div class="skill-row">
-        <div class="label-row"><span>Database Management</span><span>80%</span></div>
-        <div class="bar"><div class="bar-fill" data-level="80"></div></div>
+
+
+    <!-- ================= TOOLS ================= -->
+
+    <div class="tools-section">
+
+      <div class="tools-heading">
+
+        <div>
+          <p class="eyebrow">My Toolkit</p>
+
+          <h2>
+            Tools I
+            <span>use.</span>
+          </h2>
+        </div>
+
+        <p>
+          Technologies and development tools
+          I have worked with during projects and learning.
+        </p>
+
       </div>
-      <div class="skill-row">
-        <div class="label-row"><span>Web Deployment</span><span>65%</span></div>
-        <div class="bar"><div class="bar-fill" data-level="65"></div></div>
+
+
+      <div class="tool-list">
+
+        <span>VS Code</span>
+
+        <span>GitHub</span>
+
+        <span>MySQL</span>
+
+        <span>XAMPP</span>
+
+        <span>phpMyAdmin</span>
+
+        <span>Vercel</span>
+
+        <span>Flex / Lex</span>
+
+        <span>Oracle</span>
+
       </div>
-      <div class="skill-row">
-        <div class="label-row"><span>UI/UX Design</span><span>60%</span></div>
-        <div class="bar"><div class="bar-fill" data-level="60"></div></div>
-      </div>
+
     </div>
+
+
+    <!-- ================= LEARNING CARD ================= -->
+
+    <div class="learning-card">
+
+      <div>
+
+        <span class="skill-number">03</span>
+
+        <h2>
+          Always
+          <span>learning.</span>
+        </h2>
+
+      </div>
+
+      <p>
+        I'm continuously improving my development skills
+        through projects, internships and hands-on practice.
+        My current focus is building better responsive
+        interfaces and writing cleaner JavaScript.
+      </p>
+
+    </div>
+
   </div>
 
-  <h2 style="margin-top:56px;">Tools</h2>
-  <div class="tool-list">
-    <span>VS Code</span>
-    <span>MySQL</span>
-    <span>XAMPP</span>
-    <span>phpMyAdmin</span>
-    <span>Vercel</span>
-    <span>Flex/Lex</span>
-    <span>Vercel</span>
-  </div>
 </section>
 
+
+<!-- ================= FOOTER ================= -->
+
 <footer>
-  <div class="wrap">
-    <p>Made by Soha 2026. Built with HTML, CSS &amp; JavaScript.</p>
-    <div class="social-row">
-      <a href="https://github.com/sohaa01" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://linkedin.com/in/soha-sawant-56a708376" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="mailto:sawantsoha035@gmail.com">Email</a>
+
+  <div class="wrap footer-inner">
+
+    <div>
+
+      <a href="index.html" class="footer-brand">
+        SOHA SAWANT<span>.</span>
+      </a>
+
+      <p>
+        Front-End Developer · Intern
+      </p>
+
     </div>
+
+
+    <div class="social-row">
+
+      <a
+        href="https://github.com/sohaa01"
+        target="_blank"
+        rel="noopener"
+      >
+        GitHub
+      </a>
+
+      <a
+        href="https://linkedin.com/in/soha-sawant-56a708376"
+        target="_blank"
+        rel="noopener"
+      >
+        LinkedIn
+      </a>
+
+      <a href="mailto:sawantsoha035@gmail.com">
+        Email
+      </a>
+
+    </div>
+
+
+    <p class="copyright">
+      © 2026 Soha Sawant
+    </p>
+
   </div>
+
 </footer>
 
+
 <script src="js/main.js"></script>
+
 </body>
 </html>
